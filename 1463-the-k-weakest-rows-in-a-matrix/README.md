@@ -1,4 +1,19 @@
-<h2><a href="https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix">1463. The K Weakest Rows in a Matrix</a></h2><h3>Easy</h3><hr><p>You are given an <code>m x n</code> binary matrix <code>mat</code> of <code>1</code>&#39;s (representing soldiers) and <code>0</code>&#39;s (representing civilians). The soldiers are positioned <strong>in front</strong> of the civilians. That is, all the <code>1</code>&#39;s will appear to the <strong>left</strong> of all the <code>0</code>&#39;s in each row.</p>
+<h2><a href="https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix">1463. The K Weakest Rows in a
+Matrix</a></h2><h3>Easy</h3><hr>
+
+### Solution
+
+Optimization ideas
+
+- Use binary search to find the first 0 in each row. O(m log n).
+- Use ["find k smallest elements"](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/) algorithm
+  to find `k` weakest rows. With heapify, O(m + k log m).
+
+The final time complexity is O(m log n + k log m).
+
+---
+
+<p>You are given an <code>m x n</code> binary matrix <code>mat</code> of <code>1</code>&#39;s (representing soldiers) and <code>0</code>&#39;s (representing civilians). The soldiers are positioned <strong>in front</strong> of the civilians. That is, all the <code>1</code>&#39;s will appear to the <strong>left</strong> of all the <code>0</code>&#39;s in each row.</p>
 
 <p>A row <code>i</code> is <strong>weaker</strong> than a row <code>j</code> if one of the following is true:</p>
 
