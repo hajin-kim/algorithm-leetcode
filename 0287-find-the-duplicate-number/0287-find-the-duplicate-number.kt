@@ -5,9 +5,10 @@ class Solution {
         while (min != max) {
             val mid = (min + max) / 2
             var leftCount = 0
-            val leftInterval = min..mid
 
-            nums.forEach { if (it in leftInterval) leftCount++ }
+            for (it in nums) {
+                if (it <= mid && it >= min) leftCount++
+            }
 
             if (leftCount > mid - min + 1) {
                 max = mid
