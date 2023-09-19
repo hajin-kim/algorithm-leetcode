@@ -1,4 +1,31 @@
-<h2><a href="https://leetcode.com/problems/find-the-duplicate-number">287. Find the Duplicate Number</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>nums</code> containing&nbsp;<code>n + 1</code> integers where each integer is in the range <code>[1, n]</code> inclusive.</p>
+<h2><a href="https://leetcode.com/problems/find-the-duplicate-number">287. Find the Duplicate Number</a></h2><h3>
+Medium</h3><hr>
+
+### Solution
+
+Application of binary search.
+
+Let's divide the range of possible values into two parts: `[1, mid]` and `[mid + 1, n]`.
+If the number of elements in the formal part is greater its size, then the duplicate number must be in the first part.
+Otherwise, it must be in the second part.
+Repeat halving the range until it contains only one element.
+
+Analysis:
+
+- Time complexity: O(n log n)
+- Space complexity: O(1)
+- Does not modify the array `nums`.
+
+Follow up:
+
+- How can we prove that at least one duplicate number must exist in `nums`?
+    - Pigeonhole principle.
+- Can you solve the problem in linear runtime complexity?
+    - I saw Solutions: cycle detection using Floyd's Tortoise and Hare
+
+---
+
+<p>Given an array of integers <code>nums</code> containing&nbsp;<code>n + 1</code> integers where each integer is in the range <code>[1, n]</code> inclusive.</p>
 
 <p>There is only <strong>one repeated number</strong> in <code>nums</code>, return <em>this&nbsp;repeated&nbsp;number</em>.</p>
 
