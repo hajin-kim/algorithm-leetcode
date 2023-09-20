@@ -1,4 +1,21 @@
-<h2><a href="https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero">1776. Minimum Operations to Reduce X to Zero</a></h2><h3>Medium</h3><hr><p>You are given an integer array <code>nums</code> and an integer <code>x</code>. In one operation, you can either remove the leftmost or the rightmost element from the array <code>nums</code> and subtract its value from <code>x</code>. Note that this <strong>modifies</strong> the array for future operations.</p>
+<h2><a href="https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero">1776. Minimum Operations to Reduce X
+to Zero</a></h2><h3>Medium</h3><hr>
+
+### Solution
+
+Using two pointers.
+We can find the longest subarray that sums to `nums.sum() - x`.
+This subarray stands for the middle part of the array that we should NOT remove.
+Then, the answer is `n - len(subarray)`.
+
+Analysis
+
+- Time complexity: O(n)
+- Space complexity: O(1)
+
+---
+
+<p>You are given an integer array <code>nums</code> and an integer <code>x</code>. In one operation, you can either remove the leftmost or the rightmost element from the array <code>nums</code> and subtract its value from <code>x</code>. Note that this <strong>modifies</strong> the array for future operations.</p>
 
 <p>Return <em>the <strong>minimum number</strong> of operations to reduce </em><code>x</code> <em>to <strong>exactly</strong></em> <code>0</code> <em>if it is possible</em><em>, otherwise, return </em><code>-1</code>.</p>
 
