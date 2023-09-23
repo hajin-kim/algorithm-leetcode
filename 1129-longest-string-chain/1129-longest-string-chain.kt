@@ -24,26 +24,36 @@ class Solution {
     }
 
     fun longestStrChain(words: Array<String>): Int {
-        val wordMap = words
+        val sortedWords = words
             .distinct()
-            .groupBy { it.length }
-            .toSortedMap()
-            .mapValues { (_, v) -> v.toTypedArray() }
+            .sortedBy { it.length }
 
-        val dp = mutableMapOf<String, Int>()
+        val indicesByLength = IntArray(1001) { -1 }
+        sortedWords.forEachIndexed { index, word ->
+            if (indicesByLength[word.length] == -1)
+                indicesByLength[word.length] = index
+        }
 
-        wordMap.keys.forEach {
-            wordMap[it]!!.forEach { word ->
-                dp[word] = 1
+        val dp = IntArray(sortedWords.size)
 
-                wordMap[it - 1]?.forEach { prevWord ->
-                    if (isChain(prevWord, word)) {
-                        dp[word] = maxOf(dp[word]!!, dp[prevWord]!! + 1)
-                    }
+        sortedWords.forEachIndexed { index, word ->
+            dp[index] = 1
+
+            if (indicesByLength[word.length - 1] == -1)
+                return@forEachIndexed
+
+            for (prevIndex in indicesByLength[word.length - 1] until index) {
+                val prevWord = sortedWords[prevIndex]
+
+                if (prevWord.length + 1 != word.length)
+                    continue
+
+                if (isChain(prevWord, word)) {
+                    dp[index] = maxOf(dp[index], dp[prevIndex] + 1)
                 }
             }
         }
 
-        return dp.values.max()
+        return dp.max()
     }
 }
