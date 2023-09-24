@@ -1,4 +1,25 @@
-<h2><a href="https://leetcode.com/problems/longest-string-chain">1129. Longest String Chain</a></h2><h3>Medium</h3><hr><p>You are given an array of <code>words</code> where each word consists of lowercase English letters.</p>
+<h2><a href="https://leetcode.com/problems/longest-string-chain">1129. Longest String Chain</a></h2><h3>Medium</h3><hr>
+
+## Solution
+
+Using sorting and DP.
+
+First, sort `words` into `sortedWords`` by their length.
+You may drop the duplicated words.
+
+We should be able to find the words by their length.
+I stored the indices of the first word of each length in `indicesByLength`.
+Its index is length, and its value is the index of the first word with the length in `sortedWords`.
+
+Now, we will iterate the sorted words.
+For each `word`, query all the candidates for predecessor of `word` by `it.length == word.length - 1`.
+If `word` is a predecessor (chain) of `it`, update the `dp[word]` by `max(dp[word], dp[it] + 1)`.
+
+To check if they are chain, just compare all characters of `word` and `it` linearly.
+
+---
+
+<p>You are given an array of <code>words</code> where each word consists of lowercase English letters.</p>
 
 <p><code>word<sub>A</sub></code> is a <strong>predecessor</strong> of <code>word<sub>B</sub></code> if and only if we can insert <strong>exactly one</strong> letter anywhere in <code>word<sub>A</sub></code> <strong>without changing the order of the other characters</strong> to make it equal to <code>word<sub>B</sub></code>.</p>
 
