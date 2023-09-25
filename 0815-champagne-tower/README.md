@@ -14,6 +14,8 @@ For each row, for each glass:
 - The remaining champagne will be evenly distributed to the left and right glasses of the next
   row. `next[i] += dp[i] / 2` and `next[i + 1] += dp[i] / 2`.
 
+O(n^2) time, O(n) space, where n is the number of rows.
+
 ---
 
 <p>We stack glasses in a pyramid, where the <strong>first</strong> row has <code>1</code> glass, the <strong>second</strong> row has <code>2</code> glasses, and so on until the 100<sup>th</sup> row.&nbsp; Each glass holds one cup&nbsp;of champagne.</p>
