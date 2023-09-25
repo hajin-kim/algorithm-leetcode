@@ -1,4 +1,22 @@
-<h2><a href="https://leetcode.com/problems/champagne-tower">815. Champagne Tower</a></h2><h3>Medium</h3><hr><p>We stack glasses in a pyramid, where the <strong>first</strong> row has <code>1</code> glass, the <strong>second</strong> row has <code>2</code> glasses, and so on until the 100<sup>th</sup> row.&nbsp; Each glass holds one cup&nbsp;of champagne.</p>
+<h2><a href="https://leetcode.com/problems/champagne-tower">815. Champagne Tower</a></h2><h3>Medium</h3><hr>
+
+## Solution
+
+Using DP.
+The key is to iterate each row, and holding two arrays of the current and next row.
+
+- `dp[i]`: the total amount of champagne in the `i`-th glass of the current row.
+- `next[i]`: the total amount of champagne in the `i`-th glass of the next row.
+
+For each row, for each glass:
+
+- Pour a cup of champagne. That is, decrease the amount of champagne by 1. `val toBeFall = max(0.0, dp[i] - 1.0)`.
+- The remaining champagne will be evenly distributed to the left and right glasses of the next
+  row. `next[i] += dp[i] / 2` and `next[i + 1] += dp[i] / 2`.
+
+---
+
+<p>We stack glasses in a pyramid, where the <strong>first</strong> row has <code>1</code> glass, the <strong>second</strong> row has <code>2</code> glasses, and so on until the 100<sup>th</sup> row.&nbsp; Each glass holds one cup&nbsp;of champagne.</p>
 
 <p>Then, some champagne is poured into the first glass at the top.&nbsp; When the topmost glass is full, any excess liquid poured will fall equally to the glass immediately to the left and right of it.&nbsp; When those glasses become full, any excess champagne will fall equally to the left and right of those glasses, and so on.&nbsp; (A glass at the bottom row has its excess champagne fall on the floor.)</p>
 

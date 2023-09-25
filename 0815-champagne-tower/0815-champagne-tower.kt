@@ -7,7 +7,6 @@ class Solution {
             val newDp = DoubleArray(query_row + 1)
 
             repeat(row + 1) { column ->
-                // floating point error?
                 val overflowAmount = (dp[column] - 1.0).coerceAtLeast(0.0)
                 newDp[column] += overflowAmount / 2
                 newDp[column + 1] += overflowAmount / 2
