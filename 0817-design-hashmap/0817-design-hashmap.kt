@@ -1,5 +1,5 @@
 class MyHashMap {
-    private val hashSize = 32
+    private val hashSize = 1000
     val hashTable = Array(hashSize) { mutableListOf<Pair<Int, Int>>() }
 
     private fun hash(key: Int): Int {
