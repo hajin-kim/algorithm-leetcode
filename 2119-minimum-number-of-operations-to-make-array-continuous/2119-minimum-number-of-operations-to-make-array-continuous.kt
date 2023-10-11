@@ -1,14 +1,15 @@
 class Solution {
     fun minOperations(nums: IntArray): Int {
-        if (nums.size == 1)
+        val n = nums.size
+        if (n == 1)
             return 0
 
-        val sortedDistinct = nums.sorted().distinct().toIntArray()
+        val sortedDistinct = nums.distinct().sorted().toIntArray()
 
         var result = Int.MAX_VALUE
 
         sortedDistinct.forEachIndexed { index, num ->
-            val end = num + nums.size - 1
+            val end = num + n - 1
 
             val endIndex = sortedDistinct
                 .binarySearch(end)
@@ -17,7 +18,7 @@ class Solution {
                     else it
                 }
 
-            result = minOf(result, nums.size - endIndex + index - 1)
+            result = minOf(result, n - endIndex + index - 1)
         }
 
         return result
