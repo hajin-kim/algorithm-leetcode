@@ -13,7 +13,7 @@ class Solution {
         var new = IntArray(arrLen)
 
         for (step in 1 until steps) {
-            for (i in 0 until arrLen) {
+            for (i in 0 until (step + 2).coerceAtMost(arrLen)) {
                 // Stay
                 var result = prev[i]
                 // Right
