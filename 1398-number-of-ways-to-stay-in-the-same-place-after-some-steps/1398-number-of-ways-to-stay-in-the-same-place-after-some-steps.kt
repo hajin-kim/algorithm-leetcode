@@ -4,13 +4,14 @@ class Solution {
         if (arrLen == 1)
             return 1
 
-        var prev = IntArray(arrLen) { 0 }
+        val cacheSize = (steps + 2).coerceAtMost(arrLen)
+
+        var prev = IntArray(cacheSize) { 0 }
             .apply {
                 this[0] = 1
                 this[1] = 1
             }
-
-        var new = IntArray(arrLen)
+        var new = IntArray(cacheSize)
 
         for (step in 1 until steps) {
             for (i in 0 until (step + 2).coerceAtMost(arrLen)) {
