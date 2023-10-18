@@ -1,15 +1,16 @@
 import java.util.*
 
+// topology sort
 class Solution {
     fun minimumTime(n: Int, relations: Array<IntArray>, time: IntArray): Int {
+        val relationMap = relations
+            .groupBy { it[0] }
+            .mapValues { (_, v) -> v.map { it[1] } }
+
         val remainingPrerequisites = IntArray(n + 1)
         for (relation in relations) {
             remainingPrerequisites[relation[1]]++
         }
-
-        val relationMap = relations
-            .groupBy { it[0] }
-            .mapValues { (_, v) -> v.map { it[1] } }
 
         val requiredTimes = IntArray(n + 1)
         val queue: Queue<Int> = LinkedList()
