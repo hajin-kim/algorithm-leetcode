@@ -1,4 +1,28 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous">2119. Minimum Number of Operations to Make Array Continuous</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code>. In one operation, you can replace <strong>any</strong> element in <code>nums</code> with <strong>any</strong> integer.</p>
+<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous">2119. Minimum Number
+of Operations to Make Array Continuous</a></h2><h3>Hard</h3><hr>
+
+### Solution
+
+First, remove duplications and sort, and let this `sortedDistinct`
+Note that the duplicated numbers must be replaced.
+
+Let `e` the element from `sortedDistinct`.
+Consider an interval [`e`, `e + nums.size - 1`].
+Then any element in `sortedDistinct` is correctly placed if it's in the interval.
+Otherwise, it must be replaced.
+
+Using binary search, find the index of `e + nums.size - 1`.
+Then we can calculate the number of the elements in `sortedDistinct` which are also in [`e`, `e + nums.size - 1`], using
+indices of `e` and `e + nums.size - 1`.
+The number of elements that must be replaced is subtraction from `nums.size`.
+
+Do this to all the elements in `sortedDistinct`.
+
+Time: O(n log n)
+Space: O(n). Using in-place sort, O(1)
+
+---
+<p>You are given an integer array <code>nums</code>. In one operation, you can replace <strong>any</strong> element in <code>nums</code> with <strong>any</strong> integer.</p>
 
 <p><code>nums</code> is considered <strong>continuous</strong> if both of the following conditions are fulfilled:</p>
 

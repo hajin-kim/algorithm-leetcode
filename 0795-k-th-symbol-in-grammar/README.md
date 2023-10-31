@@ -1,4 +1,14 @@
-<h2><a href="https://leetcode.com/problems/k-th-symbol-in-grammar">795. K-th Symbol in Grammar</a></h2><h3>Medium</h3><hr><p>We build a table of <code>n</code> rows (<strong>1-indexed</strong>). We start by writing <code>0</code> in the <code>1<sup>st</sup></code> row. Now in every subsequent row, we look at the previous row and replace each occurrence of <code>0</code> with <code>01</code>, and each occurrence of <code>1</code> with <code>10</code>.</p>
+<h2><a href="https://leetcode.com/problems/k-th-symbol-in-grammar">795. K-th Symbol in Grammar</a></h2><h3>Medium</h3>
+
+---
+
+### 풀이
+
+재귀 DP로 풀었습니다.
+부모가 구해졌다면 자식이 왼쪽이냐 오른쪽이냐에 따라 값을 구할 수 있음을 이용하면 됩니다.
+리프부터 부모 방향으로 재귀 스택을 쌓습니다.
+
+<hr><p>We build a table of <code>n</code> rows (<strong>1-indexed</strong>). We start by writing <code>0</code> in the <code>1<sup>st</sup></code> row. Now in every subsequent row, we look at the previous row and replace each occurrence of <code>0</code> with <code>01</code>, and each occurrence of <code>1</code> with <code>10</code>.</p>
 
 <ul>
 	<li>For example, for <code>n = 3</code>, the <code>1<sup>st</sup></code> row is <code>0</code>, the <code>2<sup>nd</sup></code> row is <code>01</code>, and the <code>3<sup>rd</sup></code> row is <code>0110</code>.</li>

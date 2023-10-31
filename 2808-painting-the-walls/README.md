@@ -1,4 +1,13 @@
-<h2><a href="https://leetcode.com/problems/painting-the-walls">2808. Painting the Walls</a></h2><h3>Hard</h3><hr><p>You are given two <strong>0-indexed</strong> integer arrays,&nbsp;<code>cost</code> and <code>time</code>, of size <code>n</code> representing the costs and the time taken to paint <code>n</code> different walls respectively. There are two painters available:</p>
+<h2><a href="https://leetcode.com/problems/painting-the-walls">2808. Painting the Walls</a></h2><h3>Hard</h3>
+
+---
+
+### 풀이
+
+DP문제인데, 기준(관점)을 어떻게 잡느냐가 공간 최적화의 핵심이 됩니다.
+https://www.acmicpc.net/problem/7579 이 문제와 비슷한 유형입니다.
+
+<hr><p>You are given two <strong>0-indexed</strong> integer arrays,&nbsp;<code>cost</code> and <code>time</code>, of size <code>n</code> representing the costs and the time taken to paint <code>n</code> different walls respectively. There are two painters available:</p>
 
 <ul>
 	<li>A<strong>&nbsp;paid painter</strong>&nbsp;that paints the <code>i<sup>th</sup></code> wall in <code>time[i]</code> units of time and takes <code>cost[i]</code> units of money.</li>

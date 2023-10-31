@@ -1,4 +1,16 @@
-<h2><a href="https://leetcode.com/problems/reverse-words-in-a-string-iii">557. Reverse Words in a String III</a></h2><h3>Easy</h3><hr><p>Given a string <code>s</code>, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>
+<h2><a href="https://leetcode.com/problems/reverse-words-in-a-string-iii">557. Reverse Words in a String
+III</a></h2><h3>Easy</h3><hr>
+
+### 후기
+
+내장 함수 세 개만으로 해결 가능한 아주 쉬운 문제였습니다.
+직접 구현하는 연습도 좋지만, 때로는 내장 라이브러리로 간결하게 짜는 것도 좋다고 생각합니다.
+
+파이썬으로도 비슷하게 할 수 있을 것 같네요.
+
+---
+
+<p>Given a string <code>s</code>, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>

@@ -1,4 +1,16 @@
-<h2><a href="https://leetcode.com/problems/flatten-nested-list-iterator">341. Flatten Nested List Iterator</a></h2><h3>Medium</h3><hr><p>You are given a nested list of integers <code>nestedList</code>. Each element is either an integer or a list whose elements may also be integers or other lists. Implement an iterator to flatten it.</p>
+<h2><a href="https://leetcode.com/problems/flatten-nested-list-iterator">341. Flatten Nested List Iterator</a></h2><h3>
+Medium</h3>
+
+---
+
+### 풀이
+
+flatMap + 재귀를 이용해서 모든 NestedInteger의 원소들을 단일 리스트로 flatten합니다.
+flatMap은 너무 무게있는 토픽이어서, 관심이 있으시면 함수형 프로그래밍을 공부해보시길 추천드립니다.
+
+그 다음 next와 hasNext는 그 단일 리스트의 iterator를 delegate해서 구현했습니다.
+
+<hr><p>You are given a nested list of integers <code>nestedList</code>. Each element is either an integer or a list whose elements may also be integers or other lists. Implement an iterator to flatten it.</p>
 
 <p>Implement the <code>NestedIterator</code> class:</p>
 

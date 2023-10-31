@@ -1,4 +1,13 @@
-<h2><a href="https://leetcode.com/problems/count-vowels-permutation">1332. Count Vowels Permutation</a></h2><h3>Hard</h3><hr><p>Given an integer <code>n</code>, your task is to count how many strings of length <code>n</code> can be formed under the following rules:</p>
+<h2><a href="https://leetcode.com/problems/count-vowels-permutation">1332. Count Vowels Permutation</a></h2><h3>
+Hard</h3>
+
+---
+
+### 풀이
+
+평범한 DP 문제였습니다.
+
+<hr><p>Given an integer <code>n</code>, your task is to count how many strings of length <code>n</code> can be formed under the following rules:</p>
 
 <ul>
 	<li>Each character is a lower case vowel&nbsp;(<code>&#39;a&#39;</code>, <code>&#39;e&#39;</code>, <code>&#39;i&#39;</code>, <code>&#39;o&#39;</code>, <code>&#39;u&#39;</code>)</li>

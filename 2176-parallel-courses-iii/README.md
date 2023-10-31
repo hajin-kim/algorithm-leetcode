@@ -1,4 +1,15 @@
-<h2><a href="https://leetcode.com/problems/parallel-courses-iii">2176. Parallel Courses III</a></h2><h3>Hard</h3><hr><p>You are given an integer <code>n</code>, which indicates that there are <code>n</code> courses labeled from <code>1</code> to <code>n</code>. You are also given a 2D integer array <code>relations</code> where <code>relations[j] = [prevCourse<sub>j</sub>, nextCourse<sub>j</sub>]</code> denotes that course <code>prevCourse<sub>j</sub></code> has to be completed <strong>before</strong> course <code>nextCourse<sub>j</sub></code> (prerequisite relationship). Furthermore, you are given a <strong>0-indexed</strong> integer array <code>time</code> where <code>time[i]</code> denotes how many <strong>months</strong> it takes to complete the <code>(i+1)<sup>th</sup></code> course.</p>
+<h2><a href="https://leetcode.com/problems/parallel-courses-iii">2176. Parallel Courses III</a></h2><h3>Hard</h3>
+
+---
+
+### 풀이
+
+위상정렬 + DP입니다.
+선수과목이 등장하는 문제이므로 위상정렬을, 선수과목의 값중 min이나 max를 누적합해야하므로 DP를 채용합니다.
+
+빈번한 유형중 하나이니 익혀두면 좋습니다.
+
+<hr><p>You are given an integer <code>n</code>, which indicates that there are <code>n</code> courses labeled from <code>1</code> to <code>n</code>. You are also given a 2D integer array <code>relations</code> where <code>relations[j] = [prevCourse<sub>j</sub>, nextCourse<sub>j</sub>]</code> denotes that course <code>prevCourse<sub>j</sub></code> has to be completed <strong>before</strong> course <code>nextCourse<sub>j</sub></code> (prerequisite relationship). Furthermore, you are given a <strong>0-indexed</strong> integer array <code>time</code> where <code>time[i]</code> denotes how many <strong>months</strong> it takes to complete the <code>(i+1)<sup>th</sup></code> course.</p>
 
 <p>You must find the <strong>minimum</strong> number of months needed to complete all the courses following these rules:</p>
 

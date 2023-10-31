@@ -1,4 +1,17 @@
-<h2><a href="https://leetcode.com/problems/validate-binary-tree-nodes">1275. Validate Binary Tree Nodes</a></h2><h3>Medium</h3><hr><p>You have <code>n</code> binary tree nodes numbered from <code>0</code> to <code>n - 1</code> where node <code>i</code> has two children <code>leftChild[i]</code> and <code>rightChild[i]</code>, return <code>true</code> if and only if <strong>all</strong> the given nodes form <strong>exactly one</strong> valid binary tree.</p>
+<h2><a href="https://leetcode.com/problems/validate-binary-tree-nodes">1275. Validate Binary Tree Nodes</a></h2><h3>
+Medium</h3>
+
+---
+
+### 풀이
+
+트리의 성질을 리뷰해볼 좋은 문제입니다.
+
+저는 싸이클 체크로 구현했습니다.
+
+솔루션에 훨씬 좋은 풀이도 많으니 확인해보시면 좋겠습니다.
+
+<hr><p>You have <code>n</code> binary tree nodes numbered from <code>0</code> to <code>n - 1</code> where node <code>i</code> has two children <code>leftChild[i]</code> and <code>rightChild[i]</code>, return <code>true</code> if and only if <strong>all</strong> the given nodes form <strong>exactly one</strong> valid binary tree.</p>
 
 <p>If node <code>i</code> has no left child then <code>leftChild[i]</code> will equal <code>-1</code>, similarly for the right child.</p>
 

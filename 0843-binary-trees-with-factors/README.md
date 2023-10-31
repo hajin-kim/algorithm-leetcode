@@ -1,4 +1,14 @@
-<h2><a href="https://leetcode.com/problems/binary-trees-with-factors">843. Binary Trees With Factors</a></h2><h3>Medium</h3><hr><p>Given an array of unique integers, <code>arr</code>, where each integer <code>arr[i]</code> is strictly greater than <code>1</code>.</p>
+<h2><a href="https://leetcode.com/problems/binary-trees-with-factors">843. Binary Trees With Factors</a></h2><h3>
+Medium</h3>
+
+---
+
+### 풀이
+
+정렬한 다음 가장 작은 숫자부터 DP로 풀었습니다.
+O(N^2)입니다.
+
+<hr><p>Given an array of unique integers, <code>arr</code>, where each integer <code>arr[i]</code> is strictly greater than <code>1</code>.</p>
 
 <p>We make a binary tree using these integers, and each number may be used for any number of times. Each non-leaf node&#39;s value should be equal to the product of the values of its children.</p>
 

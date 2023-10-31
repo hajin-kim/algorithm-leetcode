@@ -1,4 +1,18 @@
-<h2><a href="https://leetcode.com/problems/constrained-subsequence-sum">1286. Constrained Subsequence Sum</a></h2><h3>Hard</h3><hr><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return the maximum sum of a <strong>non-empty</strong> subsequence of that array such that for every two <strong>consecutive</strong> integers in the subsequence, <code>nums[i]</code> and <code>nums[j]</code>, where <code>i &lt; j</code>, the condition <code>j - i &lt;= k</code> is satisfied.</p>
+<h2><a href="https://leetcode.com/problems/constrained-subsequence-sum">1286. Constrained Subsequence Sum</a></h2><h3>
+Hard</h3>
+
+---
+
+### 풀이
+
+정말 모르겠어서 풀이를 봤는데, 이런 테크닉도 있군요 ㅎㅎ
+
+Monotonic deque로 풀었습니다.
+모노토닉 스택과 비슷한데, deque의 앞쪽 원소가 만료되었다면 poll하는 점이 추가됩니다.
+
+이렇게 하면 O(N)으로 풀립니다.
+
+<hr><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return the maximum sum of a <strong>non-empty</strong> subsequence of that array such that for every two <strong>consecutive</strong> integers in the subsequence, <code>nums[i]</code> and <code>nums[j]</code>, where <code>i &lt; j</code>, the condition <code>j - i &lt;= k</code> is satisfied.</p>
 
 <p>A <em>subsequence</em> of an array is obtained by deleting some number of elements (can be zero) from the array, leaving the remaining elements in their original order.</p>
 

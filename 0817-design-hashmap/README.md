@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/design-hashmap">817. Design HashMap</a></h2><h3>Easy</h3><hr><p>Design a HashMap without using any built-in hash table libraries.</p>
+<h2><a href="https://leetcode.com/problems/design-hashmap">817. Design HashMap</a></h2><h3>Easy</h3><hr>
+
+### 풀이
+
+제 구현은 해시 사이즈를 크게 할 수록 공간을 많이 쓰지만 속도는 빨라집니다.
+
+---
+
+<p>Design a HashMap without using any built-in hash table libraries.</p>
 
 <p>Implement the <code>MyHashMap</code> class:</p>
 

@@ -1,4 +1,17 @@
-<h2><a href="https://leetcode.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color">2149. Remove Colored Pieces if Both Neighbors are the Same Color</a></h2><h3>Medium</h3><hr><p>There are <code>n</code> pieces arranged in a line, and each piece is colored either by <code>&#39;A&#39;</code> or by <code>&#39;B&#39;</code>. You are given a string <code>colors</code> of length <code>n</code> where <code>colors[i]</code> is the color of the <code>i<sup>th</sup></code> piece.</p>
+<h2><a href="https://leetcode.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color">2149. Remove
+Colored Pieces if Both Neighbors are the Same Color</a></h2><h3>Medium</h3><hr>
+
+### 후기
+
+쉬운 문제입니다.
+그냥 구현만 해도 됩니다.
+
+최적화 하다보니 코드가 조금 지저분해졌네요.
+어쨌든 상위 28% 찍었으니 된 것으로...
+
+---
+
+<p>There are <code>n</code> pieces arranged in a line, and each piece is colored either by <code>&#39;A&#39;</code> or by <code>&#39;B&#39;</code>. You are given a string <code>colors</code> of length <code>n</code> where <code>colors[i]</code> is the color of the <code>i<sup>th</sup></code> piece.</p>
 
 <p>Alice and Bob are playing a game where they take <strong>alternating turns</strong> removing pieces from the line. In this game, Alice moves<strong> first</strong>.</p>
 

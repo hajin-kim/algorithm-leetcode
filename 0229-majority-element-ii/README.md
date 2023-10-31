@@ -1,4 +1,17 @@
-<h2><a href="https://leetcode.com/problems/majority-element-ii">229. Majority Element II</a></h2><h3>Medium</h3><hr><p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>&lfloor; n/3 &rfloor;</code> times.</p>
+<h2><a href="https://leetcode.com/problems/majority-element-ii">229. Majority Element II</a></h2><h3>Medium</h3><hr>
+
+### 후기
+
+또 하나 배워갑니다.
+
+### 풀이
+
+값을 해시맵으로 카운팅하면 선형 시간으로 풀 수 있습니다.
+
+더 알아보기: Boyer-Moore 과반수 투표 알고리즘을 이용하면 선형 시간 + 상수 공간으로 풀 수 있습니다.
+
+---
+<p>Given an integer array of size <code>n</code>, find all elements that appear more than <code>&lfloor; n/3 &rfloor;</code> times.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>

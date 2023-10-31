@@ -1,4 +1,13 @@
-<h2><a href="https://leetcode.com/problems/monotonic-array">932. Monotonic Array</a></h2><h3>Easy</h3><hr><p>An array is <strong>monotonic</strong> if it is either monotone increasing or monotone decreasing.</p>
+<h2><a href="https://leetcode.com/problems/monotonic-array">932. Monotonic Array</a></h2><h3>Easy</h3><hr>
+
+### 후기
+
+문제의 스펙대로 구현하면 되는 쉬운 문제입니다.
+물론 선형 시간은 보장하는 것이 좋습니다.
+
+---
+
+<p>An array is <strong>monotonic</strong> if it is either monotone increasing or monotone decreasing.</p>
 
 <p>An array <code>nums</code> is monotone increasing if for all <code>i &lt;= j</code>, <code>nums[i] &lt;= nums[j]</code>. An array <code>nums</code> is monotone decreasing if for all <code>i &lt;= j</code>, <code>nums[i] &gt;= nums[j]</code>.</p>
 

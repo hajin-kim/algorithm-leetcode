@@ -1,4 +1,18 @@
-<h2><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>nums</code> sorted in non-decreasing order, find the starting and ending position of a given <code>target</code> value.</p>
+<h2><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array">34. Find First and
+Last Position of Element in Sorted Array</a></h2><h3>Medium</h3><hr>
+
+### 풀이
+
+Binary search 구현입니다.
+
+두 가지만 신경쓰면 됩니다.
+
+- 데이터를 못 찾은 경우 → found 변수를 통해 해결했습니다.
+- 시작점과 끝점을 정확히 찾기 → start와 end 함수의 구현이 다른 점에 유의해봅시다.
+
+---
+
+<p>Given an array of integers <code>nums</code> sorted in non-decreasing order, find the starting and ending position of a given <code>target</code> value.</p>
 
 <p>If <code>target</code> is not found in the array, return <code>[-1, -1]</code>.</p>
 
