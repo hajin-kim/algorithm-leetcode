@@ -8,13 +8,11 @@ class Solution {
         var count = 1
         var sum = `val`
 
-        listOf(
-            left.count(),
-            right.count(),
-        ).forEach { (subSum, subCount) ->
-            sum += subSum
-            count += subCount
-        }
+        val (leftSum, leftCount) = left.count()
+        val (rightSum, rightCount) = right.count()
+
+        sum += leftSum + rightSum
+        count += leftCount + rightCount
 
         if (`val` == sum / count)
             ++result
