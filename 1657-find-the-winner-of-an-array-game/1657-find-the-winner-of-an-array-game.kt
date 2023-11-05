@@ -1,25 +1,19 @@
 class Solution {
     fun getWinner(arr: IntArray, k: Int): Int {
-        if (k >= arr.size - 1)
-            return arr.max()
-
-        fun Int.shift(): Int = (this + 1) % arr.size
-
-        var iWinner = 0
+        var winner = arr[0]
         var winCount = 0
-        var iCounter = 1
+        var i = 1
 
-        while (winCount < k) {
-            if (arr[iWinner] > arr[iCounter]) {
-                iCounter = iCounter.shift()
+        while (winCount < k && i < arr.size) {
+            if (winner > arr[i]) {
                 winCount++
             } else {
-                iWinner = iCounter
-                iCounter = iWinner.shift()
+                winner = arr[i]
                 winCount = 1
             }
+            ++i
         }
 
-        return arr[iWinner]
+        return winner // winner found in single iteration or arr.max()
     }
 }
