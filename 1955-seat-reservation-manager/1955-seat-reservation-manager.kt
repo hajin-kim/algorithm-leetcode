@@ -1,12 +1,12 @@
 class SeatManager(n: Int) {
-    private val redBlackTree = sortedSetOf<Int>()
+    private val heap = PriorityQueue<Int>()
         .apply { addAll(1..n) }
 
     fun reserve(): Int {
-        return redBlackTree.pollFirst()!!
+        return heap.poll()
     }
 
     fun unreserve(seatNumber: Int) {
-        redBlackTree.add(seatNumber)
+        heap.add(seatNumber)
     }
 }
