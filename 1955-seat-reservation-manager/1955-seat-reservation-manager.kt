@@ -1,13 +1,12 @@
 class SeatManager(n: Int) {
-    private val set = sortedSetOf(
-        *(Array(n) { it + 1 })
-    )
+    private val redBlackTree = sortedSetOf<Int>()
+        .apply { addAll(1..n) }
 
     fun reserve(): Int {
-        return set.pollFirst()!!
+        return redBlackTree.pollFirst()!!
     }
 
     fun unreserve(seatNumber: Int) {
-        set.add(seatNumber)
+        redBlackTree.add(seatNumber)
     }
 }
