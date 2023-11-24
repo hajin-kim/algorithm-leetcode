@@ -1,4 +1,18 @@
-<h2><a href="https://leetcode.com/problems/maximum-number-of-coins-you-can-get/">1561. Maximum Number of Coins You Can Get</a></h2><h3>Medium</h3><hr><div><p>There are <code>3n</code> piles of coins of varying size, you and your friends will take piles of coins as follows:</p>
+<h2><a href="https://leetcode.com/problems/maximum-number-of-coins-you-can-get/">1561. Maximum Number of Coins You Can
+Get</a></h2><h3>Medium</h3>
+
+### Solution
+
+Greedy problem.
+Always pick the maximum, the second maximum, and the minimum.
+
+Simply sort and add all `n + i * 2`th numbers.
+
+O(N log N) time, O(1) space.
+
+---
+
+<hr><div><p>There are <code>3n</code> piles of coins of varying size, you and your friends will take piles of coins as follows:</p>
 
 <ul>
 	<li>In each step, you will choose <strong>any </strong><code>3</code> piles of coins (not necessarily consecutive).</li>
