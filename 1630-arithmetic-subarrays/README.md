@@ -1,4 +1,31 @@
-<h2><a href="https://leetcode.com/problems/arithmetic-subarrays/">1630. Arithmetic Subarrays</a></h2><h3>Medium</h3><hr><div><p>A sequence of numbers is called <strong>arithmetic</strong> if it consists of at least two elements, and the difference between every two consecutive elements is the same. More formally, a sequence <code>s</code> is arithmetic if and only if <code>s[i+1] - s[i] == s[1] - s[0] </code>for all valid <code>i</code>.</p>
+<h2><a href="https://leetcode.com/problems/arithmetic-subarrays/">1630. Arithmetic Subarrays</a></h2><h3>Medium</h3>
+
+### Solution
+
+#### Straightforward solution
+
+For all queries, immutably sort the subarray and check if all elements meet the equation of arithmetic subarray.
+
+O(N^2 log N) time and O(N) memory.
+
+#### Optimal solution
+
+If the subarray can be rearranged to an arithmetic subarray, the rearranged subarray is always unique,
+and all the numbers should be at specific position.
+
+From this, all the `num`s can be reduced to unique `position` by `position = (num - min) / step`,
+where `step = (max - min) / (right - left + 1)`.
+The subarray is arithmetic if and only if all the `num`s are reduce to unique `position`.
+
+This solution requires additional checking for edge cases.
+For example, all the numbers in the subarray can be the same.
+This subarray is arithmetic, but can cause ZDE.
+
+O(N^2) time and O(N) memory.
+
+---
+
+<hr><div><p>A sequence of numbers is called <strong>arithmetic</strong> if it consists of at least two elements, and the difference between every two consecutive elements is the same. More formally, a sequence <code>s</code> is arithmetic if and only if <code>s[i+1] - s[i] == s[1] - s[0] </code>for all valid <code>i</code>.</p>
 
 <p>For example, these are <strong>arithmetic</strong> sequences:</p>
 
