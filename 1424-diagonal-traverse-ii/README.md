@@ -1,4 +1,17 @@
-<h2><a href="https://leetcode.com/problems/diagonal-traverse-ii/">1424. Diagonal Traverse II</a></h2><h3>Medium</h3><hr><div><p>Given a 2D integer array <code>nums</code>, return <em>all elements of </em><code>nums</code><em> in diagonal order as shown in the below images</em>.</p>
+<h2><a href="https://leetcode.com/problems/diagonal-traverse-ii/">1424. Diagonal Traverse II</a></h2><h3>Medium</h3>
+
+---
+
+### Solution
+
+Since we should iterate all data and store them to an integer array, the minimum time and space complexity are O(N) and
+O(N), respectively.
+Where N is the number of all data.
+
+Just implementing is all.
+Using linked list containing iterators may ease it.
+
+<hr><div><p>Given a 2D integer array <code>nums</code>, return <em>all elements of </em><code>nums</code><em> in diagonal order as shown in the below images</em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
