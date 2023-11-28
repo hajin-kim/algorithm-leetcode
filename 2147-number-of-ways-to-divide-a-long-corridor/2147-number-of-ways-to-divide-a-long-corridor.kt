@@ -1,11 +1,12 @@
 class Solution {
     private val MODULO = (1e9 + 7).toInt()
-    
+
     fun numberOfWays(corridor: String): Int {
         val seatIndices = corridor
             .withIndex()
             .filter { it.value == 'S' }
             .map { it.index }
+            .toIntArray()
 
         if (seatIndices.size < 2 || seatIndices.size % 2 == 1)
             return 0
