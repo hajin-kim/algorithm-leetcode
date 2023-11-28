@@ -10,7 +10,8 @@ class Solution {
         if (seatIndices.size < 2 || seatIndices.size % 2 == 1)
             return 0
 
-        return seatIndices.drop(1)
+        return seatIndices
+            .drop(1)
             .windowed(2, 2)
             .fold(1L) { acc, (previousEnd, nextStart) ->
                 acc * (nextStart - previousEnd) % MODULO
