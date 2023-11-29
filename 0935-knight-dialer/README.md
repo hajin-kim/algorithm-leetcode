@@ -1,4 +1,30 @@
-<h2><a href="https://leetcode.com/problems/knight-dialer/">935. Knight Dialer</a></h2><h3>Medium</h3><hr><div><p>The chess knight has a <strong>unique movement</strong>,&nbsp;it may move two squares vertically and one square horizontally, or two squares horizontally and one square vertically (with both forming the shape of an <strong>L</strong>). The possible movements of chess knight are shown in this diagaram:</p>
+<h2><a href="https://leetcode.com/problems/knight-dialer/">935. Knight Dialer</a></h2><h3>Medium</h3>
+
+### Solution
+
+Can be solved with straightforward iterative DP.
+
+```kotlin
+new[0] = dp[4] + dp[6]
+new[1] = dp[6] + dp[8]
+new[2] = dp[7] + dp[9]
+new[3] = dp[4] + dp[8]
+new[4] = dp[3] + dp[9] + dp[0]
+new[5] = 0
+new[6] = dp[1] + dp[7] + dp[0]
+new[7] = dp[2] + dp[6]
+new[8] = dp[1] + dp[3]
+new[9] = dp[2] + dp[4]
+```
+
+Note that `dp[5] = 1` only if `n = 1`.
+
+- Time complexity: O(N)
+- Space complexity: O(1)
+
+---
+
+<hr><div><p>The chess knight has a <strong>unique movement</strong>,&nbsp;it may move two squares vertically and one square horizontally, or two squares horizontally and one square vertically (with both forming the shape of an <strong>L</strong>). The possible movements of chess knight are shown in this diagaram:</p>
 
 <p>A chess knight can move as indicated in the chess diagram below:</p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/08/18/chess.jpg" style="width: 402px; height: 402px;">
