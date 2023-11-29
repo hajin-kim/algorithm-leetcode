@@ -1,4 +1,45 @@
-<h2><a href="https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/">1685. Sum of Absolute Differences in a Sorted Array</a></h2><h3>Medium</h3><hr><div><p>You are given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order.</p>
+<h2><a href="https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/">1685. Sum of Absolute
+Differences in a Sorted Array</a></h2><h3>Medium</h3>
+
+### Solution
+
+The initial equation is
+
+```kotlin
+for (i in nums.indices) {
+    result[i] = (i until n).sumOf { nums[it] } - (0 until i).sumOf { nums[it] } + nums[i] * (i * 2 - n)
+}
+```
+
+Can be simplified to
+
+```kotlin
+var sumByCurrent = nums.sum()
+var sumFuture = 0
+
+for (i in nums.indices) {
+    result[i] = sumByCurrent - sumFuture + nums[i] * (i * 2 - n)
+    sumByCurrent -= nums[i]
+    sumFuture += nums[i]
+}
+```
+
+And finally,
+
+```kotlin
+var sumByCurrent = nums.sum()
+
+for (i in nums.indices) {
+    result[i] = sumByCurrent + nums[i] * (i * 2 - n)
+    sumByCurrent -= nums[i] * 2
+}
+```
+
+O(N) time and O(N) space.
+
+---
+
+<hr><div><p>You are given an integer array <code>nums</code> sorted in <strong>non-decreasing</strong> order.</p>
 
 <p>Build and return <em>an integer array </em><code>result</code><em> with the same length as </em><code>nums</code><em> such that </em><code>result[i]</code><em> is equal to the <strong>summation of absolute differences</strong> between </em><code>nums[i]</code><em> and all the other elements in the array.</em></p>
 
