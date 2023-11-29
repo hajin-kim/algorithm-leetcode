@@ -1,4 +1,18 @@
-<h2><a href="https://leetcode.com/problems/find-the-winner-of-an-array-game">1657. Find the Winner of an Array Game</a></h2><h3>Medium</h3><hr><p>Given an integer array <code>arr</code> of <strong>distinct</strong> integers and an integer <code>k</code>.</p>
+<h2><a href="https://leetcode.com/problems/find-the-winner-of-an-array-game">1657. Find the Winner of an Array
+Game</a></h2><h3>Medium</h3>
+
+---
+
+### Solution
+
+Optimization strategy:
+
+1. If `k >= arr.size - 1`, then the winner is `arr.max()`.
+2. After passing all the elements, the chosen candidate of the winner is always `arr.max()`.
+
+Therefore, we can find the winner by looping only once.
+
+<hr><p>Given an integer array <code>arr</code> of <strong>distinct</strong> integers and an integer <code>k</code>.</p>
 
 <p>A game will be played between the first two elements of the array (i.e. <code>arr[0]</code> and <code>arr[1]</code>). In each round of the game, we compare <code>arr[0]</code> with <code>arr[1]</code>, the larger integer wins and remains at position <code>0</code>, and the smaller integer moves to the end of the array. The game ends when an integer wins <code>k</code> consecutive rounds.</p>
 
