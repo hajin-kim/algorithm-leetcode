@@ -1,4 +1,24 @@
-<h2><a href="https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank">1627. Last Moment Before All Ants Fall Out of a Plank</a></h2><h3>Medium</h3><hr><p>We have a wooden plank of the length <code>n</code> <strong>units</strong>. Some ants are walking on the plank, each ant moves with a speed of <strong>1 unit per second</strong>. Some of the ants move to the <strong>left</strong>, the other move to the <strong>right</strong>.</p>
+<h2><a href="https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank">1627. Last Moment Before All
+Ants Fall Out of a Plank</a></h2><h3>Medium</h3>
+
+---
+
+### Solution
+
+Even if two ants meet at the same point, there is no difference between changing direction and just going straight
+through.
+
+Just find the farthest ant from its end point.
+The time needed by this ant will be the answer.
+
+### 풀이
+
+두 개미가 충돌해 방향을 전환하는 것과, 그냥 지나쳐서 통과하는 것은 결과적으로 차이가 없습니다.
+즉, 함정 문제입니다.
+
+끝점과 직선 거리가 가장 먼 개미만 구하면 됩니다.
+
+<hr><p>We have a wooden plank of the length <code>n</code> <strong>units</strong>. Some ants are walking on the plank, each ant moves with a speed of <strong>1 unit per second</strong>. Some of the ants move to the <strong>left</strong>, the other move to the <strong>right</strong>.</p>
 
 <p>When two ants moving in two <strong>different</strong> directions meet at some point, they change their directions and continue moving again. Assume changing directions does not take any additional time.</p>
 
