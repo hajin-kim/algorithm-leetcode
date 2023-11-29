@@ -1,4 +1,14 @@
-<h2><a href="https://leetcode.com/problems/largest-submatrix-with-rearrangements/">1727. Largest Submatrix With Rearrangements</a></h2><h3>Medium</h3><hr><div><p>You are given a binary matrix <code>matrix</code> of size <code>m x n</code>, and you are allowed to rearrange the <strong>columns</strong> of the <code>matrix</code> in any order.</p>
+<h2><a href="https://leetcode.com/problems/largest-submatrix-with-rearrangements/">1727. Largest Submatrix With
+Rearrangements</a></h2><h3>Medium</h3>
+
+### Solution
+
+- Time: O(R * C log C)
+- Space: O(1) with in-place implementation. Otherwise O(R * C)
+
+---
+
+<hr><div><p>You are given a binary matrix <code>matrix</code> of size <code>m x n</code>, and you are allowed to rearrange the <strong>columns</strong> of the <code>matrix</code> in any order.</p>
 
 <p>Return <em>the area of the largest submatrix within </em><code>matrix</code><em> where <strong>every</strong> element of the submatrix is </em><code>1</code><em> after reordering the columns optimally.</em></p>
 
