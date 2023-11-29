@@ -1,4 +1,15 @@
-<h2><a href="https://leetcode.com/problems/bus-routes">833. Bus Routes</a></h2><h3>Hard</h3><hr><p>You are given an array <code>routes</code> representing bus routes where <code>routes[i]</code> is a bus route that the <code>i<sup>th</sup></code> bus repeats forever.</p>
+<h2><a href="https://leetcode.com/problems/bus-routes">833. Bus Routes</a></h2><h3>Hard</h3>
+
+---
+
+### Solution
+
+The key idea is constructing a map of buses by bus stop, and then running BFS using it.
+Consider buses as vertices.
+Adjacent vertices are obtained by listing all buses that share stops of the current vertex,
+like `routes[currentBus].map { stop -> busesByStop[stop] }`.
+
+<hr><p>You are given an array <code>routes</code> representing bus routes where <code>routes[i]</code> is a bus route that the <code>i<sup>th</sup></code> bus repeats forever.</p>
 
 <ul>
 	<li>For example, if <code>routes[0] = [1, 5, 7]</code>, this means that the <code>0<sup>th</sup></code> bus travels in the sequence <code>1 -&gt; 5 -&gt; 7 -&gt; 1 -&gt; 5 -&gt; 7 -&gt; 1 -&gt; ...</code> forever.</li>
