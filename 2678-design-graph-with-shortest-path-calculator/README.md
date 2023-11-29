@@ -1,4 +1,15 @@
-<h2><a href="https://leetcode.com/problems/design-graph-with-shortest-path-calculator">2678. Design Graph With Shortest Path Calculator</a></h2><h3>Hard</h3><hr><p>There is a <strong>directed weighted</strong> graph that consists of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The edges of the graph are initially represented by the given array <code>edges</code> where <code>edges[i] = [from<sub>i</sub>, to<sub>i</sub>, edgeCost<sub>i</sub>]</code> meaning that there is an edge from <code>from<sub>i</sub></code> to <code>to<sub>i</sub></code> with the cost <code>edgeCost<sub>i</sub></code>.</p>
+<h2><a href="https://leetcode.com/problems/design-graph-with-shortest-path-calculator">2678. Design Graph With Shortest
+Path Calculator</a></h2><h3>Hard</h3>
+
+---
+
+### Solution
+
+- Initialization: Construct an array of edge list.
+- `addEdge`: Simply add it to the array of edge list.
+- `shortestPath`: Use Dijkstra each time.
+
+<hr><p>There is a <strong>directed weighted</strong> graph that consists of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The edges of the graph are initially represented by the given array <code>edges</code> where <code>edges[i] = [from<sub>i</sub>, to<sub>i</sub>, edgeCost<sub>i</sub>]</code> meaning that there is an edge from <code>from<sub>i</sub></code> to <code>to<sub>i</sub></code> with the cost <code>edgeCost<sub>i</sub></code>.</p>
 
 <p>Implement the <code>Graph</code> class:</p>
 
@@ -20,10 +31,14 @@
 
 <strong>Explanation</strong>
 Graph g = new Graph(4, [[0, 2, 5], [0, 1, 2], [1, 2, 1], [3, 0, 3]]);
-g.shortestPath(3, 2); // return 6. The shortest path from 3 to 2 in the first diagram above is 3 -&gt; 0 -&gt; 1 -&gt; 2 with a total cost of 3 + 2 + 1 = 6.
+g.shortestPath(3, 2); // return 6. The shortest path from 3 to 2 in the first diagram above is 3 -&gt; 0 -&gt; 1 -&gt; 2
+with a total cost of 3 + 2 + 1 = 6.
 g.shortestPath(0, 3); // return -1. There is no path from 0 to 3.
 g.addEdge([1, 3, 4]); // We add an edge from node 1 to node 3, and we get the second diagram above.
-g.shortestPath(0, 3); // return 6. The shortest path from 0 to 3 now is 0 -&gt; 1 -&gt; 3 with a total cost of 2 + 4 = 6.
+g.shortestPath(0, 3); // return 6. The shortest path from 0 to 3 now is 0 -&gt; 1 -&gt; 3 with a total cost of 2 + 4 =
+
+6.
+
 </pre>
 
 <p>&nbsp;</p>
