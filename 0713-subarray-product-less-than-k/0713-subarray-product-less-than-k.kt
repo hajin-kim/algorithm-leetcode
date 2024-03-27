@@ -4,20 +4,18 @@ class Solution {
             return 0
 
         var left = 0
-        var right = 0
         var product = 1
         var result = 0
 
-        repeat(nums.size) {
+        repeat(nums.size) { right->
             product *= nums[right]
-            ++right
 
-            while (left < right && product >= k) {
+            while (left <= right && product >= k) {
                 product /= nums[left]
                 ++left
             }
 
-            result += (right - left)
+            result += (right + 1 - left)
         }
 
         return result
