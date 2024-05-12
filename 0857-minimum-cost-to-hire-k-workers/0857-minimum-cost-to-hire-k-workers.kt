@@ -15,24 +15,19 @@ class Solution {
         var result = Double.MAX_VALUE
         var sumQuality = 0
 
-        for (i in 0 until k - 1) {
-            val now = indices[i]
-
-            qualityPriorityQueue += quality[now]
-            sumQuality += quality[now]
-        }
-
-        for (i in k - 1 until n) {
+        for (i in 0 until n) {
             val now = indices[i]
 
             qualityPriorityQueue += quality[now]
             sumQuality += quality[now]
 
-            val cost = rates[now] * sumQuality
-            result = minOf(result, cost)
+            if (i >= k - 1) {
+                val cost = rates[now] * sumQuality
+                result = minOf(result, cost)
 
-            val currentMaxQuality = qualityPriorityQueue.poll()
-            sumQuality -= currentMaxQuality
+                val currentMaxQuality = qualityPriorityQueue.poll()
+                sumQuality -= currentMaxQuality
+            }
         }
 
         return result
