@@ -1,4 +1,21 @@
-<h2><a href="https://leetcode.com/problems/distribute-coins-in-binary-tree/?envType=daily-question&envId=2024-05-18">979. Distribute Coins in Binary Tree</a></h2><h3>Medium</h3><hr><p>You are given the <code>root</code> of a binary tree with <code>n</code> nodes where each <code>node</code> in the tree has <code>node.val</code> coins. There are <code>n</code> coins in total throughout the whole tree.</p>
+<h2><a href="https://leetcode.com/problems/distribute-coins-in-binary-tree/?envType=daily-question&envId=2024-05-18">
+
+979. Distribute Coins in Binary Tree</a></h2><h3>Medium</h3>
+
+---
+
+### Solution
+
+A tricky problem that can be solved with single recursion.
+
+1. Calculate numbers of expected remaining coins for each left and right subtree recursively.
+2. Calculate expected movements for the current subtree by `abs(leftCoins) + abs(rightCoins)`. This means that
+    - If the number of remaining coins is negative, the amount of coins should be moved to the subtree.
+    - If it is positive, the amount of coins should be drained from the subtree.
+3. Return the number of expected remaining coins while discounting 1 coin for the current node
+   by `leftCoins + rightCoins + this.val - 1`
+
+<hr><p>You are given the <code>root</code> of a binary tree with <code>n</code> nodes where each <code>node</code> in the tree has <code>node.val</code> coins. There are <code>n</code> coins in total throughout the whole tree.</p>
 
 <p>In one move, we may choose two adjacent nodes and move one coin from one node to another. A move may be from parent to child, or from child to parent.</p>
 
