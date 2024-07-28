@@ -1,40 +1,31 @@
 class Solution {
+    private val START = 0
+    private val END = 1
+
     fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
-        val START = 0
-        val END = 1
+        val sorted = mutableListOf<IntArray>()
 
-        val n = intervals.size
-
-        val index = let {
-            val indexOrInsertionPoint = intervals.binarySearch(newInterval, compareBy { it[0] })
-            if (indexOrInsertionPoint < 0)
-                -indexOrInsertionPoint - 1
-            else
-                indexOrInsertionPoint
+        var inserted = false
+        for (interval in intervals) {
+            if (!inserted && newInterval[START] <= interval[START]) {
+                sorted += newInterval
+                inserted = true
+            }
+            sorted += interval
         }
+        if (!inserted)
+            sorted += newInterval
 
         val result = mutableListOf<IntArray>()
-        print(index)
-        if (index > 0) {
-            val front = intervals.slice(0 until index).toMutableList()
-            while (front.isNotEmpty() && front.last()[END] >= newInterval[START]) {
-                newInterval[START] = minOf(newInterval[START], front.last()[START])
-                newInterval[END] = maxOf(newInterval[END], front.last()[END])
-                front.removeLast()
-            }
-            result.addAll(front)
-        }
+        for (i in sorted.indices) {
+            val interval = sorted[i]
 
-        result.add(newInterval)
-
-        if (index < n) {
-            val back = intervals.slice(index until n).toMutableList()
-            while (back.isNotEmpty() && result.last()[END] >= back[0][START]) {
-                result.last()[START] = minOf(back[0][START], result.last()[START])
-                result.last()[END] = maxOf(back[0][END], result.last()[END])
-                back.removeFirst()
-            }
-            result.addAll(back)
+            if (i < sorted.lastIndex && sorted[i + 1][START] <= interval[END]) {
+                val next = sorted[i + 1]
+                next[START] = interval[START]
+                next[END] = maxOf(interval[END], next[END])
+            } else
+                result += interval
         }
 
         return result.toTypedArray()
