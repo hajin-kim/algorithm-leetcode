@@ -7,6 +7,7 @@ class Solution {
         val maxAndAvailableAt = PriorityQueue<Pair<Int, Int>>(compareBy { it.second })
 
         var localMax = 0
+        var result = 0
         for (i in indices) {
             val start = startTime[i]
             val end = endTime[i]
@@ -15,9 +16,11 @@ class Solution {
                 localMax = maxOf(maxAndAvailableAt.poll().first, localMax)
             }
 
-            maxAndAvailableAt += localMax + profit[i] to end
+            val max = localMax + profit[i]
+            maxAndAvailableAt += max to end
+            result = maxOf(max, result)
         }
 
-        return maxAndAvailableAt.maxOf { it.first }
+        return result
     }
 }
