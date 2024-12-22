@@ -6,7 +6,7 @@ class Solution {
         current: MutableList<Int>,
     ) {
         if (current.size == nums.size) {
-            result += current
+            result += current.toMutableList()
             return
         }
         for (i in nums.indices) {
@@ -15,9 +15,9 @@ class Solution {
             }
 
             used[i] = true
-            val next = current.toMutableList()
-            next += nums[i]
-            backtrack(nums, result, used, next)
+            current += nums[i]
+            backtrack(nums, result, used, current)
+            current.removeLast()
             used[i] = false
         }
     }
